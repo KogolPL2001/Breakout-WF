@@ -15,10 +15,16 @@ namespace Breakout
             OptionsButton.MouseLeave += OnMouseLeaveOptionsButton;
             AboutButton.MouseLeave += OnMouseLeaveAboutButton;
             ExitButton.MouseLeave += OnMouseLeaveExitButton;
+            player.MediaEnded += MediaEnded;
             player.Open(new Uri(@"C:\Users\Legion\source\repos\Breakout\Breakout\Resources\gigachad meme sound effect.wav"));
             player.Play();
         }
-        //Title label control
+        public void MediaEnded(object sender, EventArgs e)
+        {
+            player.Open(new Uri(@"C:\Users\Legion\source\repos\Breakout\Breakout\Resources\gigachad meme sound effect.wav"));
+            player.Play();
+        }
+        //title label control
         private void titleLabel_Click(object sender, EventArgs e)
         {
 
