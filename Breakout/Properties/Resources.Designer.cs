@@ -61,11 +61,31 @@ namespace Breakout.Properties {
         }
         
         /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gigachad {
+            get {
+                object obj = ResourceManager.GetObject("gigachad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.IO.UnmanagedMemoryStream podobny do zasobu System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream gigachad_meme_sound_effect {
             get {
                 return ResourceManager.GetStream("gigachad_meme_sound_effect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gigachad1 {
+            get {
+                object obj = ResourceManager.GetObject("gigachad1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

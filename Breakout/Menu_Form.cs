@@ -73,7 +73,11 @@ namespace Breakout
         //About Button control
         private void AboutButton_Click(object sender, EventArgs e)
         {
-
+            About_Form aboutForm = new About_Form();
+            this.Hide();
+            aboutForm.ShowDialog();
+            if (!FormIsOpen(Application.OpenForms, typeof(Options_Form)))
+                this.Show();
         }
         private void OnMouseEnterAboutButton(object sender, EventArgs e)
         {
