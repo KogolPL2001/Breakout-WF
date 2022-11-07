@@ -33,7 +33,11 @@ namespace Breakout
         //Play Button control
         private void playButton_Click(object sender, EventArgs e)
         {
+            Game_Form gameForm = new Game_Form();
             this.Hide();
+            gameForm.ShowDialog();
+            if (!FormIsOpen(Application.OpenForms, typeof(Options_Form)))
+                this.Show();
         }
 
         private void OnMouseEnterPlayButton(object sender, EventArgs e)
