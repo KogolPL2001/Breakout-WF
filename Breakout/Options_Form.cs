@@ -12,11 +12,28 @@ namespace Breakout
 {
     public partial class Options_Form : Form
     {
+        
         public Options_Form()
         {
             InitializeComponent();
             ReturnButton.MouseEnter += OnMouseEnterReturnButton;
             ReturnButton.MouseLeave += OnMouseLeaveReturnButton;
+            DifficultyComboBox.SelectedIndexChanged += DifficultyComboBox_SelectedIndexChanged; 
+            DifficultyComboBox.SelectedIndex = Menu.DifficultyIndex;
+            PaddleComboBox.SelectedIndexChanged += PaddleComboBox_SelectedIndexChanged;
+            PaddleComboBox.SelectedIndex = Menu.ColorIndex;
+        } 
+
+        //Difficulty control 
+        private void DifficultyComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            Menu.DifficultyIndex = DifficultyComboBox.SelectedIndex;
+        }
+
+        //Paddle color control
+        private void PaddleComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            Menu.ColorIndex = PaddleComboBox.SelectedIndex;
         }
 
         //Return Button control

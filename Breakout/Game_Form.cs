@@ -36,7 +36,51 @@ namespace Breakout
 
             gameTimer.Start();
 
-            foreach (Control x in this.Controls)
+            //Check user options
+            switch(Menu.ColorIndex)
+            {
+                case 0:
+                    Paddle.BackColor = Color.White;
+                    break;
+                case 1:
+                    Paddle.BackColor = Color.Yellow;
+                    break;
+                case 2:
+                    Paddle.BackColor = Color.Blue;
+                    break;
+                case 3:
+                    Paddle.BackColor = Color.Red;
+                    break;
+                case 4:
+                    Paddle.BackColor = Color.Green;
+                    break;
+                case 5:
+                    Paddle.BackColor = Color.Purple;
+                    break;
+                case 6:
+                    Paddle.BackColor = Color.Orange;
+                    break;
+            }
+
+            switch (Menu.DifficultyIndex)
+            {
+                case 0:
+                    ballXSpeed = 5;
+                    ballYSpeed = 5;
+                    paddleSpeed = 10;
+                    break;
+                case 1:
+                    ballXSpeed = 10;
+                    ballYSpeed = 10;
+                    paddleSpeed = 15;
+                    break;
+                case 2:
+                    ballXSpeed = 15;
+                    ballYSpeed = 15;
+                    paddleSpeed = 20;
+                    break;
+            }
+                    foreach (Control x in this.Controls)
             {
                 if (x is PictureBox && (string)x.Tag == "blocks")
                 {

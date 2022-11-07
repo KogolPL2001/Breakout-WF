@@ -3,6 +3,8 @@ namespace Breakout
     public partial class Menu : Form
     {
         public static System.Windows.Media.MediaPlayer player = new System.Windows.Media.MediaPlayer();
+        public static int DifficultyIndex = 0; 
+        public static int ColorIndex = 0; 
         public Menu()
         {
             InitializeComponent();

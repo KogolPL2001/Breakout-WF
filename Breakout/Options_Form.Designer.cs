@@ -31,6 +31,10 @@
             this.VolumeLabel = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.ReturnButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DifficultyComboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PaddleComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,12 +73,68 @@
             this.ReturnButton.UseVisualStyleBackColor = false;
             this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(78, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 23);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Difficulty:";
+            // 
+            // DifficultyComboBox
+            // 
+            this.DifficultyComboBox.BackColor = System.Drawing.Color.Black;
+            this.DifficultyComboBox.ForeColor = System.Drawing.Color.White;
+            this.DifficultyComboBox.FormattingEnabled = true;
+            this.DifficultyComboBox.Items.AddRange(new object[] {
+            "Easy",
+            "Medium",
+            "Hard"});
+            this.DifficultyComboBox.Location = new System.Drawing.Point(202, 111);
+            this.DifficultyComboBox.Name = "DifficultyComboBox";
+            this.DifficultyComboBox.Size = new System.Drawing.Size(151, 28);
+            this.DifficultyComboBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(48, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Paddle color:";
+            // 
+            // PaddleComboBox
+            // 
+            this.PaddleComboBox.BackColor = System.Drawing.Color.Black;
+            this.PaddleComboBox.ForeColor = System.Drawing.Color.White;
+            this.PaddleComboBox.FormattingEnabled = true;
+            this.PaddleComboBox.Items.AddRange(new object[] {
+            "White",
+            "Yellow",
+            "Blue",
+            "Red",
+            "Green",
+            "Purple",
+            "Orange"});
+            this.PaddleComboBox.Location = new System.Drawing.Point(202, 152);
+            this.PaddleComboBox.Name = "PaddleComboBox";
+            this.PaddleComboBox.Size = new System.Drawing.Size(151, 28);
+            this.PaddleComboBox.TabIndex = 6;
+            // 
             // Options_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(382, 403);
+            this.Controls.Add(this.PaddleComboBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.DifficultyComboBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.VolumeLabel);
@@ -93,5 +153,9 @@
         private Label VolumeLabel;
         private TrackBar trackBar1;
         private Button ReturnButton;
+        private Label label1;
+        private ComboBox DifficultyComboBox;
+        private Label label2;
+        private ComboBox PaddleComboBox;
     }
 }
