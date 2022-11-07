@@ -68,31 +68,52 @@ namespace Breakout
                     ballXSpeed = 5;
                     ballYSpeed = 5;
                     paddleSpeed = 10;
+                    setUpBlocks(0, 4);
                     break;
                 case 1:
                     ballXSpeed = 10;
                     ballYSpeed = 10;
                     paddleSpeed = 15;
+                    setUpBlocks(1,8);
                     break;
                 case 2:
                     ballXSpeed = 15;
                     ballYSpeed = 15;
                     paddleSpeed = 20;
+                    setUpBlocks(2,10);
                     break;
-            }
-                    foreach (Control x in this.Controls)
-            {
-                if (x is PictureBox && (string)x.Tag == "blocks")
-                {
-
-                }
-
             }
 
             GameOverScoreLabel.Hide();
             YourScoreLabel.Hide();
             GameOverLabel.Hide();
             ReturnButton.Hide();
+        }
+
+        private void setUpBlocks(int firstIdx,int lastIdx)
+        {
+            
+                foreach (Control x in this.Controls)
+                {
+                int rnd = random.Next(firstIdx, lastIdx);
+                    if (x is PictureBox && (string)x.Tag == "blocks")
+                    {
+                        if (rnd > 6)
+                        {
+                            x.BackColor = Color.Red;
+                            continue;
+                        }
+                        if (rnd > 4)
+                        {
+                            x.BackColor = Color.Green;
+                            continue;
+                        }
+                        if (rnd > 2)
+                            x.BackColor = Color.Blue;
+                }
+
+                }
+          
         }
 
         private void mainGameTimerEvent(object sender, EventArgs e)
@@ -114,9 +135,9 @@ namespace Breakout
             {
                 ballXSpeed = -ballXSpeed;
             }
-
+            
             //Top wall ball bouncing
-            if (Ball.Top < 0)
+            if (Ball.Top-10 < 0)
             {
                 ballYSpeed = -ballYSpeed;
             }
@@ -134,16 +155,25 @@ namespace Breakout
                 {
                     if (Ball.Bounds.IntersectsWith(x.Bounds))
                     {
-                        score += 10;
-                        ScoreLabel.Text = "Score: " + score;
                         ballYSpeed = -ballYSpeed;
-                        this.Controls.Remove(x);
+                        if (x.BackColor == Color.White)
+                        {
+                            this.Controls.Remove(x);
+                            score += 10;
+                            ScoreLabel.Text = "Score: " + score;
+                        }
+                        else if (x.BackColor == Color.Blue)
+                            x.BackColor = Color.White;
+                        else if (x.BackColor == Color.Green)
+                            x.BackColor = Color.Blue;
+                        else if (x.BackColor == Color.Red)
+                            x.BackColor = Color.Green;
+
                     }
                 }
             }
-
             //GameOver
-            if (score > 330 || Ball.Top>this.Height-Ball.Height) 
+            if (score > 660 || Ball.Top>this.Height-Ball.Height) 
             {
                 gameOver();
             }
