@@ -43,11 +43,12 @@
             this.VolumeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.VolumeLabel.AutoSize = true;
             this.VolumeLabel.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.VolumeLabel.Location = new System.Drawing.Point(147, 19);
+            this.VolumeLabel.Location = new System.Drawing.Point(110, 19);
             this.VolumeLabel.Name = "VolumeLabel";
-            this.VolumeLabel.Size = new System.Drawing.Size(105, 29);
+            this.VolumeLabel.Size = new System.Drawing.Size(179, 29);
             this.VolumeLabel.TabIndex = 0;
-            this.VolumeLabel.Text = "Volume";
+            this.VolumeLabel.Text = "Music Volume";
+            this.VolumeLabel.Click += new System.EventHandler(this.VolumeLabel_Click);
             // 
             // trackBar1
             // 
@@ -67,7 +68,7 @@
             this.ReturnButton.ForeColor = System.Drawing.SystemColors.Control;
             this.ReturnButton.Location = new System.Drawing.Point(142, 320);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(116, 55);
+            this.ReturnButton.Size = new System.Drawing.Size(117, 55);
             this.ReturnButton.TabIndex = 2;
             this.ReturnButton.Text = "Return";
             this.ReturnButton.UseVisualStyleBackColor = false;

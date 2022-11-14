@@ -27,18 +27,21 @@ namespace Breakout
         //Difficulty control 
         private void DifficultyComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            Menu.ClickObjectSound.Play();
             Menu.DifficultyIndex = DifficultyComboBox.SelectedIndex;
         }
 
         //Paddle color control
         private void PaddleComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            Menu.ClickObjectSound.Play();
             Menu.ColorIndex = PaddleComboBox.SelectedIndex;
         }
 
         //Return Button control
         private void ReturnButton_Click(object sender, EventArgs e)
         {
+            Menu.ClickObjectSound.Play();
             this.Close();
         }
 
@@ -52,9 +55,16 @@ namespace Breakout
             ReturnButton.BackColor = Color.Black;
         }
 
+        //TrackBar control
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
+            Menu.ClickObjectSound.Play();
             Menu.player.Volume = (float)trackBar1.Value/10;
+        }
+
+        private void VolumeLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

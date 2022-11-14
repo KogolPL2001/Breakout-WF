@@ -88,6 +88,8 @@ namespace Breakout
             YourScoreLabel.Hide();
             GameOverLabel.Hide();
             ReturnButton.Hide();
+            PlayerNameTextBox.Hide();
+            EnterYourNameLabel.Hide();
         }
 
         private void setUpBlocks(int firstIdx,int lastIdx)
@@ -133,18 +135,21 @@ namespace Breakout
             //Side walls ball bouncing
             if (Ball.Left < 0 || Ball.Left > this.Width - Ball.Width)
             {
+                Menu.ClickObjectSound.Play();
                 ballXSpeed = -ballXSpeed;
             }
             
             //Top wall ball bouncing
             if (Ball.Top-10 < 0)
             {
+                Menu.ClickObjectSound.Play();
                 ballYSpeed = -ballYSpeed;
             }
 
             //Paddle bouncing
             if (Ball.Bounds.IntersectsWith(Paddle.Bounds))
             {
+                Menu.ClickObjectSound.Play();
                 ballYSpeed = -ballYSpeed;
             }
 
@@ -155,6 +160,7 @@ namespace Breakout
                 {
                     if (Ball.Bounds.IntersectsWith(x.Bounds))
                     {
+                        Menu.ClickObjectSound.Play();
                         ballYSpeed = -ballYSpeed;
                         if (x.BackColor == Color.White)
                         {
@@ -183,6 +189,7 @@ namespace Breakout
         private void gameOver()
         {
             gameTimer.Stop();
+            Menu.GameOverSound.Play();
             //Hide paddle, ball etc.
             foreach (Control x in this.Controls)
             {
@@ -197,6 +204,8 @@ namespace Breakout
             YourScoreLabel.Show();
             GameOverLabel.Show();
             ReturnButton.Show();
+            EnterYourNameLabel.Show();
+            PlayerNameTextBox.Show();
         }
 
         private void keyDown(object sender, KeyEventArgs e)
@@ -225,7 +234,25 @@ namespace Breakout
 
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Menu.ClickObjectSound.Play();
+            if (!(PlayerNameTextBox.Text == ""))
+            {
+                Menu.PlayerInfo playerInfo = new Menu.PlayerInfo();
+                playerInfo.Name = PlayerNameTextBox.Text;
+                playerInfo.Score = GameOverScoreLabel.Text;
+                Menu.PlayerList.Add(playerInfo); 
+                this.Close();
+            }
+        }
+
+        private void PlayerNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GameOverLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

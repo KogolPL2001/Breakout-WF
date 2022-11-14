@@ -33,6 +33,7 @@
             this.OptionsButton = new System.Windows.Forms.Button();
             this.AboutButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.ScoresButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GameTitle
@@ -40,9 +41,9 @@
             this.GameTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GameTitle.Font = new System.Drawing.Font("Showcard Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GameTitle.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.GameTitle.Location = new System.Drawing.Point(88, 21);
+            this.GameTitle.Location = new System.Drawing.Point(77, 16);
             this.GameTitle.Name = "GameTitle";
-            this.GameTitle.Size = new System.Drawing.Size(224, 46);
+            this.GameTitle.Size = new System.Drawing.Size(196, 34);
             this.GameTitle.TabIndex = 0;
             this.GameTitle.Text = "BREAKOUT";
             this.GameTitle.Click += new System.EventHandler(this.titleLabel_Click);
@@ -53,9 +54,10 @@
             this.PlayButton.BackColor = System.Drawing.Color.Black;
             this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PlayButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.PlayButton.Location = new System.Drawing.Point(142, 91);
+            this.PlayButton.Location = new System.Drawing.Point(124, 68);
+            this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(116, 55);
+            this.PlayButton.Size = new System.Drawing.Size(102, 41);
             this.PlayButton.TabIndex = 1;
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = false;
@@ -67,9 +69,10 @@
             this.OptionsButton.BackColor = System.Drawing.Color.Black;
             this.OptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OptionsButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.OptionsButton.Location = new System.Drawing.Point(142, 161);
+            this.OptionsButton.Location = new System.Drawing.Point(124, 121);
+            this.OptionsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OptionsButton.Name = "OptionsButton";
-            this.OptionsButton.Size = new System.Drawing.Size(116, 55);
+            this.OptionsButton.Size = new System.Drawing.Size(102, 41);
             this.OptionsButton.TabIndex = 2;
             this.OptionsButton.Text = "Options";
             this.OptionsButton.UseVisualStyleBackColor = false;
@@ -81,9 +84,10 @@
             this.AboutButton.BackColor = System.Drawing.Color.Black;
             this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AboutButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.AboutButton.Location = new System.Drawing.Point(142, 231);
+            this.AboutButton.Location = new System.Drawing.Point(124, 173);
+            this.AboutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(116, 55);
+            this.AboutButton.Size = new System.Drawing.Size(102, 41);
             this.AboutButton.TabIndex = 3;
             this.AboutButton.Text = "About";
             this.AboutButton.UseVisualStyleBackColor = false;
@@ -95,26 +99,44 @@
             this.ExitButton.BackColor = System.Drawing.Color.Black;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ExitButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.ExitButton.Location = new System.Drawing.Point(142, 301);
+            this.ExitButton.Location = new System.Drawing.Point(124, 275);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(116, 55);
+            this.ExitButton.Size = new System.Drawing.Size(102, 41);
             this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // Form1
+            // ScoresButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.ScoresButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ScoresButton.BackColor = System.Drawing.Color.Black;
+            this.ScoresButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ScoresButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.ScoresButton.Location = new System.Drawing.Point(124, 224);
+            this.ScoresButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ScoresButton.Name = "ScoresButton";
+            this.ScoresButton.Size = new System.Drawing.Size(102, 41);
+            this.ScoresButton.TabIndex = 5;
+            this.ScoresButton.Text = "Scores";
+            this.ScoresButton.UseVisualStyleBackColor = false;
+            this.ScoresButton.Click += new System.EventHandler(this.Scores_Click);
+            // 
+            // Menu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(382, 403);
+            this.ClientSize = new System.Drawing.Size(334, 342);
+            this.Controls.Add(this.ScoresButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.AboutButton);
             this.Controls.Add(this.OptionsButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.GameTitle);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -128,5 +150,6 @@
         private Button OptionsButton;
         private Button AboutButton;
         private Button ExitButton;
+        private Button ScoresButton;
     }
 }

@@ -22,6 +22,7 @@ namespace Breakout
         //Return Button control
         private void ReturnButton_Click(object sender, EventArgs e)
         {
+            Menu.ClickObjectSound.Play();
             this.Close();
         }
 
@@ -36,6 +37,11 @@ namespace Breakout
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
