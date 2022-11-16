@@ -174,7 +174,7 @@ namespace Breakout
                             x.BackColor = Color.Blue;
                         else if (x.BackColor == Color.Red)
                             x.BackColor = Color.Green;
-
+                        break;
                     }
                 }
             }
